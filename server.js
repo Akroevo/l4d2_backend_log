@@ -10,10 +10,10 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.json({ message: 'L4D2 Survivor Log API funcionando. Stay safe out there.' }));
 
-// Rotas - Entidade 1: Missões
+
 app.use('/api/missions', require('./routes/missionRoutes'));
 
-// Rotas - Entidade 2 (nova): Survivors (Sobreviventes personalizados do usuário)
+
 app.use('/api/survivors', require('./routes/survivorRoutes'));
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/l4d2_survivor_log';
